@@ -3,7 +3,7 @@ URxvt*scrollTtyOutput: false
 URxvt*scrollTtyKeypress: true
 
 !Font
-URxvt.font: xft:Iosevka:size=12
+URxvt.font: xft:Iosevka Nerd Font:size=12
 
 !Plugins
 URxvt.perl-ext-common: default,confirm-paste,matcher,tabbedex,background
