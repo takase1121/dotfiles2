@@ -9,6 +9,7 @@ Instead I found [cdwilson's epic way of managing it](https://github.com/cdwilson
 
 
 ### Used programs
+- GNU Stow
 - rxvt-unicode\*
 - xterm\*
 - qterminal\*
