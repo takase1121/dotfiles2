@@ -14,8 +14,8 @@ alias ls='ls --color=auto'
 # enable starship prompt
 eval "$(starship init bash)"
 
-# bind ctrl-x to emit SIGINT on supported terms
-stty intr ^X
+# bind ctrl-x to emit SIGINT (on xterm / kitty without copy_or_interrupt)
+# stty intr ^X
 
 # load .local
 PATH="$PATH:$HOME/.local/bin"

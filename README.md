@@ -9,10 +9,11 @@ Instead I found [cdwilson's epic way of managing it](https://github.com/cdwilson
 
 
 ### Used programs
-- rxvt-unicode
+- rxvt-unicode\*
 - xterm\*
-- openbox
 - qterminal\*
+- kitty
+- openbox
 - picom (`next` branch)
 - mpv
 - xwinwrap ([my fork](https://github.com/takase1121/xwinwrap))
@@ -21,8 +22,10 @@ Instead I found [cdwilson's epic way of managing it](https://github.com/cdwilson
 - chromium
 - lxqt
 
+> `*` means that I no longer use this program, so I might not update it
+
 ### Notes
-- `CTRL-X` replaces `CTRL-C`. This is intentional (although not working yet on urxvt), check [this](https://github.com/csdvrx/CuteXterm)
+- `CTRL-X` replaces `CTRL-C` in XTerm. This is intentional, check [this](https://github.com/csdvrx/CuteXterm)
 
 ### TODO
 - locker (haven't decided)
