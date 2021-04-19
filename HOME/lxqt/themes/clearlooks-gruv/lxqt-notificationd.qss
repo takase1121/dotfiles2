@@ -1,0 +1,27 @@
+Notification {
+    color: #ebdbb2;
+    border: 1px solid #32302f;
+    border-radius: 3px;
+    background: #32302f;
+    margin: 0px;
+}
+
+QLabel {
+    color: #ebdbb2;
+}
+
+#closeButton {
+    border: none;
+    qproperty-icon: url(lxqt-notificationd/cancel.svg);
+}
+
+#closeButton:hover {
+    border: 1px solid #1d2021;
+    border-radius: 3px;
+    background: #504945;
+    qproperty-icon: url(lxqt-notificationd/cancel.png);
+}
+
+#appLabel {
+    font-weight: bold;
+}

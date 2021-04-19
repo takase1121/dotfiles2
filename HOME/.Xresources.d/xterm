@@ -1,0 +1,243 @@
+! Allow regular colors, italics and underline
+XTerm*underLine: true
+XTerm*VT100.colorMode: True
+XTerm*VT100.colorBDMode: false
+XTerm*VT100.colorITMode: false
+XTerm*colorULMode: off
+XTerm*italicULMode: false
+
+! Sixels support with a matching palette
+XTerm*decTerminalID: 340
+XTerm*numColorRegisters: 256
+
+! Matching terminfo for all that
+XTerm*termName: xterm-256color
+
+! Dont toggle the 8th bit
+XTerm.vt100.metaSendsEscape: true
+
+! Dont send Ctrl-H for Backspace
+XTerm.vt100.backarrowKey: false
+XTerm.ttyModes: erase ^?
+
+! Allow escape codes that default to no on debian
+XTerm*allowFontOps: yes
+XTerm*allowTcapOps: yes
+XTerm*allowWindowOps: yes
+XTerm*dynamicColors: True
+
+! No border
+XTerm*borderWidth: 0
+XTerm*VT100.internalBorder: 0
+
+! Geometry adapted to my 4k screen
+XTerm.VT100.geometry: 100x25
+XTerm*fullscreen: false
+
+! Cursor with no blink
+XTerm*cursorBlink: True
+
+! Scrollbar
+XTerm*rightScrollBar: True
+XTerm*saveLines: 4096
+
+! Dont sync
+XTerm*fastScroll: True
+! Use other fast scroll hints
+XTerm*jumpScroll: True
+XTerm*multiScroll: True
+
+! Scroll on key input, not on char output
+XTerm*scrollkey: True
+XTerm*scrollTtyOutput: false
+
+! Locale settings
+!XTerm.vt100.locale: false
+XTerm.vt100.utf8: true
+XTerm.VT100.utf8Title: true
+!XTerm.vt100.wideChars: true
+XTerm*menuLocale: "C"
+
+! No sound, visualbell only, and cause focus
+XTerm*visualBell: true
+XTerm*popOnBell: true
+XTerm*bellIsUrgent: true
+! Minimal visualbell
+XTerm*visualBellLine: true
+XTerm*visualBellDelay: 20
+
+! Selection
+XTerm*highlightSelection: true
+
+! Select URL with a custom regex
+!XTerm*on2Clicks: regex [^ ''""()<>$+]*
+
+! Extend selection to words
+XTerm*trimSelection: true
+
+! Dont disallow HT (TAB) in paste; i.e. do not convert to space character
+XTerm*VT100.DisallowedPasteControls: BS,DEL,ESC
+
+! Double-click to select whole URLs
+XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
+
+! bad idea to select into the clipboard for https://shallowsky.com/blog/linux/x-selection-keys.html
+XTerm*selectToClipboard: false
+! by default, use primary to avoid overwriting what everybody uses, iff ctrl-c send to clipboard
+XTerm*VT100*translations:    #override \n\
+   <BtnUp>:select-end(SELECT, CUT_BUFFER0, PRIMARY) \n\
+   Ctrl <Key> C: copy-selection(CLIPBOARD, PRIMARY) \n\
+   Ctrl <Key> V: insert-selection(CLIPBOARD) \n\
+   Shift Ctrl <Key> V: insert-selection(PRIMARY) \n\
+   Shift <Key> Insert: insert-selection(CUT_BUFFER0,PRIMARY,CLIPBOARD) \n\
+   Shift Ctrl <Key>  Insert: insert-formatted("\033[202~%S~%s", CUT_BUFFER0,PRIMARY,CLIPBOARD) \n\
+   Ctrl <Key> +:       larger-vt-font() \n\
+   Ctrl <Key> -:       smaller-vt-font() \n\
+   Shift Ctrl <Key>B: set-scrollbar(toggle) \n\
+   Shift Ctrl <Key>S: set-scroll-on-key(toggle) \n\
+   Shift Ctrl <Key>R: hard-reset() \n\
+   Shift Ctrl <Key>M: maximize() \n\
+   Shift Ctrl <Key>R: restore() \n\
+   Ctrl Shift <Key>O: print(noAttrs, noNewLine) \n\
+   Ctrl Shift <Key>H: set-altscreen(toggle) \n\
+   Shift <KeyPress> Home : scroll-to(begin) \n\
+   Shift <KeyPress> End  : scroll-to(end) \n\
+   Meta <KeyPress> Prior: scroll-back(1,halfpage) \n\
+   Meta <KeyPress> Next : scroll-forw(1,halfpage) \n\
+   Meta <KeyPress> Home : scroll-to(begin) \n\
+   Meta <KeyPress> End  : scroll-to(end) \n\
+
+! WONTFIX: ctrl-pageup/down are used by Tabbed
+! instead use alt-pageup/down to scroll, completed by matching home/end
+
+! FIXME: upon start, would need to acquire the clipboard content
+!   Ctrl <Key> V: insert-selection(PRIMARY) \n\
+!   Shift Ctrl <Key> V: insert-selection(CLIPBOARD) \n\
+!   Shift <Key> Insert: insert-selection(CUT_BUFFER0,PRIMARY,CLIPBOARD) \n\
+!   Shift Ctrl <Key>  Insert: insert-formatted("\033[202~%S~%s", CUT_BUFFER0,PRIMARY,CLIPBOARD) \n\
+
+! FIXME: finding in the scroll buffer is not working yet
+!   Shift Ctrl <KeyPress> F:dabbrev-expand() \n\
+!  Meta <KeyPress> /:dabbrev-expand()
+ 
+! Extract url with ctrl-shift-o
+! XTerm.vt100.printerCommand: xterm-open-url.sh
+
+! Most people think selecting only into the clipboard is a bad idea
+! cf https://shallowsky.com/blog/linux/x-selection-keys.html
+! But if you disagree, use:
+!XTerm*selectToClipboard: true
+!*VT100*translations:    #override \n\
+!   <BtnUp>:select-end(SELECT, CUT_BUFFER0, CLIPBOARD) \n\
+!   Ctrl <Key> C: copy-selection(CLIPBOARD) \n\
+!   Ctrl <Key> V: insert-selection(CLIPBOARD) \n\
+!   Shift Ctrl <Key> V: insert-selection(CLIPBOARD) \n\
+!   Shift <Key> Insert: insert-selection(CLIPBOARD) \n\
+!   Ctrl <Key> +:       larger-vt-font() \n\
+!   Ctrl <Key> -:       smaller-vt-font() \n\
+!   Shift Ctrl <Key>M: maximize() \n\
+!   Shift Ctrl <Key>R: restore()
+
+!Background & foreground
+!XTerm*background: #002B36
+!WONTFIX: a pure black is better on OLED
+XTerm*background: #282828
+XTerm*foreground: #fbf1c7
+!XTerm*borderColor: #343434
+
+!Colors: Solarized dark
+!-------------------------
+!black
+XTerm*color0: #3c3836
+XTerm*color8: #504945
+
+!red
+XTerm*color1: #cc241d
+XTerm*color9: #fb4934
+
+!green
+XTerm*color2: #98971a
+XTerm*color10: #b8bb26
+
+!yellow
+XTerm*color3: #d79921
+XTerm*color11: #fabd2f
+
+!blue
+XTerm*color4: #458588
+XTerm*color12: #83a598
+
+!magenta
+XTerm*color5: #b16286
+XTerm*color13: #d3869b
+
+!cyan
+XTerm*color6: #689d6a
+XTerm*color14: #8ec07c
+
+!white
+XTerm*color7: #a89984
+XTerm*color15: #ebdbb2
+
+! For regular sized screens (not 4k)
+! apt install fonts-terminus xfonts-terminus xfonts-terminus-oblique fonts-inconsolata
+! Default font, used for drawing the menu
+XTerm*font: -*-terminus-*-r-*-12-*-*-*-*-*-*-*
+! Ctrl-click menu choices
+XTerm*VT100.font1:   -*-terminus-*-r-*-13-*-*-*-*-*-*-*
+XTerm*VT100.font2:   -*-terminus-*-r-*-13-*-*-*-*-*-*-*
+XTerm*VT100.font3:   -*-terminus-*-r-*-16-*-*-*-*-*-*-*
+XTerm*VT100.font4:   -*-terminus-*-r-*-18-*-*-*-*-*-*-*
+XTerm*VT100.font5:   -*-terminus-*-r-*-20-*-*-*-*-*-*-*
+XTerm*VT100.font6:   -*-terminus-*-r-*-22-*-*-*-*-*-*-*
+XTerm*fontMenu.Label:  VT Fonts
+XTerm*fontMenu*fontdefault*Label:    Default
+XTerm*fontMenu*font1*Label:  Unreadable
+XTerm*fontMenu*font2*Label:  12-points
+XTerm*fontMenu*font3*Label:  16-points
+XTerm*fontMenu*font4*Label:  18-points
+XTerm*fontMenu*font5*Label:  20-points
+XTerm*fontMenu*font6*Label:  22-points
+
+! Aliasing and hinting is question of tastes
+! I like it so I keep it even in 4k
+! Xft.autohint: 0
+! Xft.antialias: false
+! Xft.hinting: false
+
+! For 4k screens
+! Default font, used for drawing the menu
+!XTerm*font:    -*-terminus-*-r-*-32-*-*-*-*-*-*-*
+! Ctrl-click menu choices
+!XTerm*font1:   -*-terminus-*-r-*-18-*-*-*-*-*-*-*
+!XTerm*font2:   -*-terminus-*-r-*-20-*-*-*-*-*-*-*
+!XTerm*font3:   -*-terminus-*-r-*-22-*-*-*-*-*-*-*
+!XTerm*font4:   -*-terminus-*-r-*-24-*-*-*-*-*-*-*
+!XTerm*font5:   -*-terminus-*-r-*-28-*-*-*-*-*-*-*
+!XTerm*font6:   -*-terminus-*-r-*-32-*-*-*-*-*-*-*
+!XTerm*fontMenu.Label:  VT Fonts
+!XTerm*fontMenu*fontdefault*Label:    Default
+!XTerm*fontMenu*font1*Label:  Terminus 18
+!XTerm*fontMenu*font2*Label:  Terminus 20
+!XTerm*fontMenu*font3*Label:  Terminus 22
+!XTerm*fontMenu*font4*Label:  Terminus 24
+!XTerm*fontMenu*font5*Label:  Terminus 28
+!XTerm*fontMenu*font6*Label:  Terminus 32
+!XTerm*faceSize: 22
+! For a 4k display, matching hight for the menu:
+!XTerm*menuHeight: 2000
+
+! No ligatures support yet, so iosevka is not shining
+!XTerm*faceName: "IBM Plex Mono"
+!XTerm*boldFont: "Iosevka SS04 SemiBold"
+!XTerm*faceName: "Ubuntu Mono for Powerline"
+!XTerm*boldFont: "Ubuntu Mono Bold"
+XTerm*faceName: Iosevka Nerd Font Mono
+XTerm*faceSize: 14
+
+! FIXME: A pointer of the same approx size is not working
+!Xcursor*size: 32
+!Xcursor.size: 64
+! FIXME: The following can help making it more visible
+!XTerm*pointerColor: blue
+!XTerm*pointerColorBackground: red

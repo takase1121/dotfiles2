@@ -1,0 +1,90 @@
+!Do not scroll tty by default until keypress
+URxvt*scrollTtyOutput: false
+URxvt*scrollTtyKeypress: true
+
+!Font
+URxvt.font: xft:Iosevka:size=12
+
+!Plugins
+URxvt.perl-ext-common: default,confirm-paste,matcher,tabbedex,background
+
+!Background
+URxvt.background.expr: \
+center keep { \
+	shade -0.5, \
+		keep { load "/home/takase/.config/urxvt_bg_blur.png" } \
+}
+
+!Clickable URL
+URxvt.url-launcher: /usr/bin/xdg-open
+URxvt.matcher.button: 1
+
+!clipboard
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Control-C: eval:selection-to-clipboard
+URxvt.keysym.Control-V: eval:paste_clipboard
+
+!tabbed
+URxvt.tabbedex.tab-fg: 15
+URxvt.tabbedex.tab-bg: 8
+URxvt.tabbedex.no-tabbedex-keys: true
+URxvt.keysym.Meta-Shift-N: perl:tabbedex:new_tab
+URxvt.keysym.Meta-Shift-H: perl:tabbedex:move_tab_left
+URxvt.keysym.Meta-Shift-J: perl:tabbedex:move_tab_right
+URxvt.keysym.Meta-1: perl:tabbedex:goto_tab_1
+URxvt.keysym.Meta-2: perl:tabbedex:goto_tab_2
+URxvt.keysym.Meta-3: perl:tabbedex:goto_tab_3
+URxvt.keysym.Meta-4: perl:tabbedex:goto_tab_4
+URxvt.keysym.Meta-5: perl:tabbedex:goto_tab_5
+URxvt.keysym.Meta-6: perl:tabbedex:goto_tab_6
+URxvt.keysym.Meta-7: perl:tabbedex:goto_tab_7
+URxvt.keysym.Meta-8: perl:tabbedex:goto_tab_8
+URxvt.keysym.Meta-9: perl:tabbedex:goto_tab_9
+URxvt.keysym.Meta-0: perl:tabbedex:goto_tab_10
+
+
+!Scroll
+URxvt.scrollstyle: plain
+URxvt.scrollBar_floating: true
+URxvt.scrollBar_right: true
+URxvt.thickness: 16
+URxvt*scrollColor: #504945
+
+!Colors: Gruvbox
+!-------------------------
+!black
+URxvt*color0: #3c3836
+URxvt*color8: #504945
+
+!red
+URxvt*color1: #cc241d
+URxvt*color9: #fb4934
+
+!green
+URxvt*color2: #98971a
+URxvt*color10: #b8bb26
+
+!yellow
+URxvt*color3: #d79921
+URxvt*color11: #fabd2f
+
+!blue
+URxvt*color4: #458588
+URxvt*color12: #83a598
+
+!magenta
+URxvt*color5: #b16286
+URxvt*color13: #d3869b
+
+!cyan
+URxvt*color6: #689d6a
+URxvt*color14: #8ec07c
+
+!white
+URxvt*color7: #a89984
+URxvt*color15: #ebdbb2
+
+!bg and fg
+URxvt*background: #282828
+URxvt*foreground: #fbf1c7
