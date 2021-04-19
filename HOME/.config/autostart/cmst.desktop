@@ -1,0 +1,5 @@
+[Desktop Entry]
+Exec=cmst -m -w 5
+Name=cmst
+Type=Application
+Version=1.0

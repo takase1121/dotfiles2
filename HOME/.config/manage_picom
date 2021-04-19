@@ -1,0 +1,30 @@
+#!/usr/bin/env sh
+
+find_picom() {
+	picom_path="$(which picom)"
+	for proc in /proc/[0-9]*/exe; do
+		if [ "$(readlink "$proc")" = "$picom_path" ]; then
+			echo "$proc" | rev | cut -d"/" -f2 | rev
+			return 0
+		fi
+	done
+	return 1
+}
+
+case $1 in
+	start)
+		if find_picom >/dev/null 2>&1; then
+			echo "picom already running."
+			exit 1
+		fi
+		nohup picom --experimental-backends >/dev/null 2>&1 &
+	;;
+	stop)
+		picom_pid="$(find_picom)"
+		if [ "$?" -ne 0 ]; then
+			echo "picom is not running"
+			exit 1
+		fi
+		kill "$picom_pid"
+	;;
+esac

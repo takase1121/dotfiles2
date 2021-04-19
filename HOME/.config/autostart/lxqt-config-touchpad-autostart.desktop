@@ -1,0 +1,7 @@
+[Desktop Entry]
+Comment=Autostart touchpad settings for lxqt-config-input
+Exec=lxqt-config-input --load-touchpad
+Name=lxqt-config-touchpad-autostart
+OnlyShowIn=LXQt
+Type=Application
+Version=1.0

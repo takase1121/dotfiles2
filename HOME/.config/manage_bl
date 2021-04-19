@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+BLPATH="/sys/class/backlight/amdgpu_bl1"
+
+case $1 in
+	get)
+		cat "$BLPATH/brightness"
+		;;
+	add)
+		brightness=$(cat "$BLPATH/brightness")
+		max_brightness=$(cat "$BLPATH/max_brightness")
+
+		brightness=$(($brightness + $2))
+		if [ $brightness -gt 0 ] && [ $brightness -le $max_brightness ]; then
+			echo "$brightness" > "$BLPATH/brightness"
+		fi
+		echo "Set brightness to $brightness"
+		;;
+	set)
+		echo "$brightness" > "$BLPATH/brightness"
+		echo "Set brightness to $brightness"
+		;;
+	*)
+		echo "Unknown command"
+esac
+

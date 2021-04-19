@@ -1,0 +1,75 @@
+#!/usr/bin/env sh
+
+if [[ -z "$UID" ]]; then
+        UID="$(id -u)"
+fi
+
+PIDFILE="/var/run/user/$UID/mpv-wallpaper.pid"
+SOCKFILE="/var/run/user/$UID/mpv-wallpaper.sock"
+
+start_wp() {
+	if [[ -f "$PIDFILE" ]]; then    
+        	PID="$(cat "$PIDFILE")"
+		while [[ -d "/proc/$PID" ]]; do
+			kill $PID >/dev/null 2>&1
+			sleep 1
+		done 
+        	rm "$PIDFILE"
+	fi
+
+	if [[ -f "$SOCKFILE" ]]; then
+        	rm "$SOCKFILE"  
+	fi
+
+	PID=$(xwinwrap -g 1920x1080 -ni -fdt -un -s -st -sp -b -nf -d -- \
+        	mpv --no-osc --no-osd-bar \
+        	--no-audio --hwdec=vaapi --no-input-default-bindings \
+        	--player-operation-mode=cplayer --input-ipc-server="$SOCKFILE" \
+        	--wid=%WID --loop-file $HOME/.config/blue.mp4 \
+        	2>&1 >/dev/null)
+
+	echo $PID | rev | cut -d " " -f 1 | rev > "$PIDFILE"
+}
+
+usage() {
+	echo "Usage: $0 [start|stop|pause|resume]"	
+	echo "	start	- Start the wallpaper"
+	echo "	stop	- Stop the wallpaper"
+	echo "	pause	- Pause the wallpaper"
+	echo "	resume	- Resume the wallpaper"
+	exit 1
+}
+
+
+if [[ -f "$SOCKFILE" ]]; then
+	# try to ping it
+	r="$(echo "{}" | socat - "$SOCKFILE")"
+	if [[ $? -ne 0 ]] || [[ -z "$r" ]]; then
+		echo "mpv socket gone rogue, deleting it"
+		rm -f "$SOCKFILE"
+	fi
+fi
+
+if [[ $# -lt 1 ]]; then
+	echo "Insufficient arguments."
+	usage
+fi
+
+operation="$1"; shift
+case $operation in
+	pause)
+		echo '{"command": ["set_property", "pause", true]}' | socat - "$SOCKFILE"
+		;;
+	resume)
+		echo '{"command": ["set_property", "pause", false]}' | socat - "$SOCKFILE"
+		;;
+	stop)
+		echo '{"command": ["quit"]}' | socat - "$SOCKFILE"
+		;;
+	start)
+		start_wp
+		;;
+	*)
+		usage
+		;;
+esac
