@@ -1,5 +1,14 @@
 #!/bin/sh
 
+# run pre-update scripts
+if [[ -d "preupdate" ]]; then
+	for f in preupdate/*.sh; do
+		echo "Running preupdate script: $f"
+		PSEUDO_HOME="$PWD/HOME" "$f"
+	done
+fi
+
+
 # Split into two steps for the case where HOME contains a copy of an existing
 # file in $HOME and stow will not --restow because of conflicts
 
