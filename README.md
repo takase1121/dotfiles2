@@ -22,6 +22,8 @@ Instead I found [cdwilson's epic way of managing it](https://github.com/cdwilson
 - nano
 - chromium
 - lxqt
+- i3lock ([this fork](https://github.com/Lixxia/i3lock))
+- xautolock
 
 > `*` means that I no longer use this program, so I might not update it
 
