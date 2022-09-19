@@ -138,6 +138,3 @@ alias gp='git push origin master'
 
 # chezmoi
 alias cz='chezmoi'
-
-# add path
-export PATH="$PATH:$HOME/.local/bin"

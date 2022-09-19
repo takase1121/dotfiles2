@@ -1,0 +1,5 @@
+# add path
+export PATH="$PATH:$HOME/.local/bin"
+
+# export env
+export GTK_THEME=Adwaita:dark
