@@ -1,0 +1,6 @@
+[includeIf "gitdir:~/gh/"]
+	path = ~/gh/.gitconfig_gh
+
+; for chezmoi
+[includeIf "gitdir:~/.local/share/chezmoi/"]
+	path = ~/gh/.gitconfig_gh

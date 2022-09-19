@@ -1,0 +1,7 @@
+[user]
+	signingKey = 7285C859EEB7D3DE160B65FB60EEFFC68EB3031B
+	name = takase1121
+	email = 20792268+takase1121@users.noreply.github.com
+
+[commit]
+	gpgsign = true
