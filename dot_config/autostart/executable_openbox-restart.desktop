@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Restart Openbox
+Comment=Restarts openbox to apply Xft.dpi settings
+Exec=/usr/bin/openbox --restart
+Type=Application
+Path=/usr/bin

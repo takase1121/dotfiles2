@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Exec=xfce4-power-manager
+Terminal=false
+Hidden=false
+Name=xfce4-power-manager

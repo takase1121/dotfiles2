@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Exec=bash ~/.config/openbox/polybar/launch.sh
+Terminal=false
+Hidden=false
+Name=polybar
