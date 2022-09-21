@@ -1,4 +1,4 @@
-2022-09-18	rc.xml KEYBINDS
+2022-09-20	rc.xml KEYBINDS
 -------------------------------
 
  0	W-1           				GoToDesktop
@@ -69,17 +69,17 @@
 65	W-x           				~/.config/openbox/rofi/bin/powermenu
 66	W-s           				~/.config/openbox/rofi/bin/screenshot
 67	W-r           				~/.config/openbox/rofi/bin/runner
-68	W-p           				color-gpick
-69	C-A-t         				xfce4-terminal
-70	C-A-v         				alacritty -e vim
-71	C-A-r         				alacritty -e ranger
-72	C-A-h         				alacritty -e htop
-73	C-A-l         				betterlockscreen --lock
-74	C-S-Escape     			Exit
-75	C-S-BackSpace  			Restart
-76	C-S-R         				Reconfigure
-77	W-Escape      				xkill
-78	W-c           				Close
+68	W-c           				~/.config/openbox/rofi/bin/calc
+69	W-p           				color-gpick
+70	C-A-t         				xfce4-terminal
+71	C-A-v         				alacritty -e vim
+72	C-A-r         				alacritty -e ranger
+73	C-A-h         				alacritty -e htop
+74	C-A-l         				betterlockscreen --lock
+75	C-S-Escape     			Exit
+76	C-S-BackSpace  			Restart
+77	C-S-R         				Reconfigure
+78	W-Escape      				xkill
 79	W-q           				Close
 80	A-F5          				Iconify
 81	A-F6          				ToggleMaximize
