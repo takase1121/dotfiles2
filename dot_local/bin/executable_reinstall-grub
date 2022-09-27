@@ -1,0 +1,12 @@
+#!/bin/sh
+
+GRUB_MODULES_EXTRA="normal test linux echo search loadenv configfile tpm \
+efifwsetup reboot halt ls"
+
+GRUB_MODULES_FROM_FILE="$(awk '/insmod/ { print $2 }' /boot/grub/grub.cfg | while read -r i; do [ -f "/boot/grub/x86_64-efi/$i.mod" ] && echo $i; done | sort -u | tr '\n' ' ')"
+
+GRUB_MODULES="$GRUB_MODULES_EXTRA $GRUB_MODULES_FROM_FILE"
+
+sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --modules="$GRUB_MODULES" --disable-shim-lock --no-nvram
+sudo sbctl sign /boot/efi/efi/Archcraft/grubx64.efi
+
