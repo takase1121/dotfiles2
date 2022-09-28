@@ -7,7 +7,7 @@
 STYLE="default"
 ddir="$HOME/.config/openbox/rofi/dialogs"
 
-rofi_command="rofi -theme $HOME/.config/openbox/rofi/$STYLE/powermenu.rasi"
+rofi_command="rofi -dpi 150 -theme $HOME/.config/openbox/rofi/$STYLE/powermenu.rasi"
 
 uptime=$(uptime -p | sed -e 's/up //g')
 
@@ -33,12 +33,13 @@ rofi -dmenu\
     -i\
     -no-fixed-num-lines\
     -p "Are You Sure? : "\
-    -theme "$ddir/confirm.rasi"
+    -theme "$ddir/confirm.rasi" \
+    -dpi 150
 }
 
 # Display Help
 show_msg() {
-	rofi -theme "$ddir/askpass.rasi" -e "Options : yes / no / y / n"
+	rofi -dpi 150 -theme "$ddir/askpass.rasi" -e "Options : yes / no / y / n"
 }
 
 # Variable passed to rofi

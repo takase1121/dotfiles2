@@ -4,7 +4,7 @@
 ## Everyone is permitted to copy and distribute copies of this file under GNU-GPL3
 
 STYLE="default"
-rofi_command="rofi -theme $HOME/.config/openbox/rofi/$STYLE/mpd.rasi"
+rofi_command="rofi -dpi 150 -theme $HOME/.config/openbox/rofi/$STYLE/mpd.rasi"
 
 # Buttons
 layout=`cat $HOME/.config/openbox/rofi/$STYLE/mpd.rasi | grep BUTTON | cut -d'=' -f2 | tr -d '[:blank:],*/'`

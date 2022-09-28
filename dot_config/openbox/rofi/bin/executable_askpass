@@ -11,4 +11,5 @@ rofi -dmenu\
      -i\
      -no-fixed-num-lines\
      -p "User Password: "\
-     -theme "$DIR"/askpass.rasi
+     -theme "$DIR"/askpass.rasi \
+     -dpi 150

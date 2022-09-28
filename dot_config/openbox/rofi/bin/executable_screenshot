@@ -27,7 +27,7 @@ else
 fi
 
 notify_cmd_shot="dunstify -u low --replace=699 -i /usr/share/archcraft/icons/dunst/picture.png"
-rofi_command="rofi -theme $HOME/.config/openbox/rofi/$STYLE/screenshot.rasi"
+rofi_command="rofi -dpi 150 -theme $HOME/.config/openbox/rofi/$STYLE/screenshot.rasi"
 
 # notify and view screenshot
 notify_view () {

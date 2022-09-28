@@ -6,6 +6,7 @@
 STYLE="default"
 
 rofi \
+    -dpi 150 \
 	-show run \
 	-scroll-method 0 \
 	-terminal alacritty \
