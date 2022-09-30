@@ -47,7 +47,7 @@ entry {
     horizontal-align:               0;
     placeholder:                    "Formula...";
     blink:                          true;
-    border:                         0px 0px 0px 0px;
+    border:                         1px;
     border-color:                   @BDR;
     border-radius:                  10px;
     padding:                        8px;
