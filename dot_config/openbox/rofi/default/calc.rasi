@@ -2,8 +2,7 @@
 /* Everyone is permitted to copy and distribute copies of this file under GNU-GPL3 */
 
 configuration {
-    show-icons:                     false;
-    display-run:                    "";
+
     disable-history:                false;
     click-to-exit:                  true;
 }
@@ -16,7 +15,7 @@ window {
     background-color:               @BG;
     text-color:                     @FG;
     border-radius:                  10px;
-    width:                          350px;
+    width:                          15em;
     location:                       center;
     anchor:                         center;
     x-offset:                       0;
@@ -24,7 +23,7 @@ window {
 }
 
 prompt {
-    enabled:                        true;
+    enabled:                        false;
     padding:                        8px;
     background-color:               @BG;
     text-color:                     @IMG;
@@ -32,7 +31,7 @@ prompt {
 
 textbox-prompt-colon {
     expand:                         false;
-    str:                            "+";
+    str:                            "";
     border-radius:                  100%;
     background-color:               @SEL;
     text-color:                     @BG;
@@ -48,10 +47,11 @@ entry {
     horizontal-align:               0;
     placeholder:                    "Formula...";
     blink:                          true;
-    border:                         0px 0px 2px 0px;
+    border:                         0px 0px 0px 0px;
     border-color:                   @BDR;
     border-radius:                  10px;
     padding:                        8px;
+    margin:                         0 0 0 1em;
 }
 
 inputbar {
@@ -90,7 +90,7 @@ textbox {
     placeholder-color:              @FG;
     expand:                         true;
     horizontal-align:               0;
-    border:                         0px 0px 2px 0px;
+    border:                         0px 0px 0px 0px;
     border-color:                   @BDR;
     padding:                        8px;
 }

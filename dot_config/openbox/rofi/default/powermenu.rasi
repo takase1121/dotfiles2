@@ -20,7 +20,7 @@ window {
     background-color:               @BG;
     text-color:                     @FG;
     border-radius:                  10px;
-    width:                          300px;
+    width:                          15em;
     location:                       center;
     anchor:                         center;
     x-offset:                       0;
@@ -29,11 +29,11 @@ window {
 
 prompt {
     enabled: 						true;
-	margin: 						0px 0px 0px 8px;
+	margin: 						0px 0px 0px 1em;
 	padding: 						8px;
 	background-color: 				@BGA;
 	text-color: 					@FG;
-    border:                  		0px 0px 2px 0px;
+    border:                  		0px 0px 0px 0px;
     border-color:                  	@BDR;
     border-radius:                  10px;
 }
