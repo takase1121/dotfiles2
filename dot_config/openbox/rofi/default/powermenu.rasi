@@ -33,7 +33,7 @@ prompt {
 	padding: 						8px;
 	background-color: 				@BGA;
 	text-color: 					@FG;
-    border:                  		0px;
+    border:                  		1px;
     border-color:                  	@BDR;
     border-radius:                  10px;
 }
