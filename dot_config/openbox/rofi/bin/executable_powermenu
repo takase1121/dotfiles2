@@ -19,12 +19,14 @@ if [[ "$layout" == "TRUE" ]]; then
 	lock=""
 	suspend=""
 	logout=""
+    hibernate="⭘"
 else
 	shutdown=" Shutdown"
 	reboot=" Restart"
 	lock=" Lock"
 	suspend=" Sleep"
 	logout=" Logout"
+    hibernate="⭘ Hibernate"
 fi
 
 # Ask for confirmation
@@ -43,7 +45,7 @@ show_msg() {
 }
 
 # Variable passed to rofi
-options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
+options="$lock\n$suspend\n$logout\n$reboot\n$shutdown\n$hibernate"
 
 chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 0)"
 case $chosen in
@@ -86,6 +88,18 @@ case $chosen in
 		ans=$(rdialog &)
 		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
 			openbox --exit
+		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
+			exit
+        else
+			show_msg
+        fi
+        ;;
+    $hibernate)
+		ans=$(rdialog &)
+		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
+			mpc -q pause
+			amixer set Master mute
+			systemctl hibernate
 		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
 			exit
         else
