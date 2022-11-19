@@ -1,0 +1,73 @@
+@import "mocha.css";
+
+* {
+    font-family: Symbols Nerd Font,sans-serif;
+    font-size: 11pt;
+    border: 0;
+    border-radius: 0;
+}
+
+window#waybar {
+    background-color: @base;
+    color: @text;
+}
+
+box#taskbar.active {
+    background-color: @surface0;
+}
+
+#pulseaudio {
+    background-color: @lavender;
+    color: @mantle;
+}
+
+#pulseaudio.muted {
+    background-color: @yellow;
+}
+
+#network label {
+    color: @mantle;
+}
+
+#network.disabled {
+    background-color: @red;
+}
+
+#network.disconnected {
+    background-color: @maroon;
+}
+
+#network.linked {
+    background-color: @pink;
+}
+
+#network.ethernet, #network.wifi {
+    background-color: @sapphire;
+}
+
+#battery label {
+    color: @mantle;
+}
+
+#battery.charging, #battery.not-charging {
+    background-color: @flamingo;
+}
+
+#battery.discharging {
+    background-color: @teal;
+}
+
+#battery.warning {
+    background-color: @maroon;
+}
+
+#battery.critical {
+    background-color: @red;
+}
+
+#tray {
+    background-color: @peach;
+    padding: 0 0.5rem;
+}
+
+

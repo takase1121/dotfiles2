@@ -1,0 +1,52 @@
+{
+    "spacing": 0,
+    "modules-left": ["wlr/taskbar"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "network", "battery", "tray"],
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 21,
+        "icon-theme": "Luv",
+        "tooltip-format": "{title}",
+        "on-click": "activate"
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "pulseaudio": {
+        "format": "{icon}{volume}%",
+        "format-muted": " {volume}%",
+        "format-icons": {
+            "headphone": " ",
+            "headset": " ",
+            "default": [" ", " "]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": " {essid}",
+        "format-ethernet": " {ipaddr}",
+        "tooltip-format": "{ifname} {ipaddr}",
+        "format-disconnected": "",
+        "on-click": "networkmanager_dmenu",
+        "on-click-right": "nm-connection-editor"
+    },
+    "battery": {
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon}{capacity}%",
+        "format-charging": " {capacity}%",
+        "format-alt": "{icon} {power}W",
+        "format-time": "{H}:{m}",
+        "format-icons": [" ", " ", " ", " ", " "],
+        "max-length": 25
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 10
+    }
+}

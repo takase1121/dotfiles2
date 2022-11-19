@@ -1,0 +1,40 @@
+* {
+	background-image: none;
+    font-family: sans-serif;
+    font-size: 18pt;
+}
+window {
+	background-color: rgba(17, 17, 27, 0.8);
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0);
+	background-repeat: no-repeat;
+	background-position: center;
+    border: 0;
+}
+
+button:focus, button:active, button:hover {
+	background-color: rgb(49, 50, 68);
+	outline-style: none;
+}
+
+#lock {
+    background-image: image(url("/usr/share/icons/Luv/apps/64/system-lock-screen.svg"), url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("/usr/share/icons/Luv/apps/64/system-log-out.svg"), url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("/usr/share/icons/Luv/apps/64/system-suspend.svg"), url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+}
+
+#shutdown {
+    background-image: image(url("/usr/share/icons/Luv/apps/64/system-shutdown.svg"), url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("/usr/share/icons/Luv/apps/64/system-reboot.svg"), url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+}

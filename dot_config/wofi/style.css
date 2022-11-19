@@ -1,0 +1,16 @@
+window {
+    background-color: #1e1e2e;
+}
+
+#input {
+    border: none;
+    border-radius: 0;
+    color: #cdd6f4;
+    background-color: #1e1e2e;
+    font-size: 22pt;
+}
+
+#entry:selected {
+    background-color: #313244;
+}
+
