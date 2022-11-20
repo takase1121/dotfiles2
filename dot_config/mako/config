@@ -5,7 +5,7 @@ text-color=#cdd6f4
 border-color=#89b4fa
 progress-color=over #313244
 
-font=sans-serif 12
+font=sans-serif 11
 
 [urgency=high]
 border-color=#fab387
