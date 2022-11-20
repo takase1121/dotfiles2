@@ -1,0 +1,20 @@
+#!/bin/sh
+
+if [[ -n "$PROCESS_NAME" ]]; then
+    PROGRAM_PID_FILE="$XDG_RUNTIME_DIR/$PROCESS_NAME.pid"
+else
+    PROGRAM_PID_FILE="$XDG_RUNTIME_DIR/$1.pid"
+fi
+
+if [[ -f "$PROGRAM_PID_FILE" ]]; then
+    PGID="$(ps -o pgid= "$(cat "$PROGRAM_PID_FILE")" | tr -d ' ')"
+    kill -TERM "-$PGID"
+else
+    setsid "$@" &
+    PID=$!
+    echo "$PID" > $PROGRAM_PID_FILE
+    wait "$PID"
+    rm -f "$PROGRAM_PID_FILE"
+fi
+
+
