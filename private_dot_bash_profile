@@ -1,3 +1,4 @@
 export MOZ_ENABLE_WAYLAND=1
 export GRIM_DEFAULT_DIR=$HOME/Pictures/Screenshots
+export PATH="$PATH:$HOME/.local/bin"
 
