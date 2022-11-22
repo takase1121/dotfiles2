@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock",
+    "action" : "gtklock",
     "text" : "Lock",
     "keybind" : "l"
 }
@@ -27,4 +27,10 @@
     "action" : "systemctl reboot",
     "text" : "Reboot",
     "keybind" : "r"
+}
+{
+    "label": "hibernate",
+    "action": "systemctl hibernate",
+    "text": "Hibernate",
+    "keybind": "h"
 }
