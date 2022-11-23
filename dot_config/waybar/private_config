@@ -40,7 +40,7 @@
         },
         "format": "{icon}{capacity}%",
         "format-charging": " {capacity}%",
-        "format-alt": "{icon} {power}W",
+        "format-alt": "{icon} {power:0.1f}W",
         "format-time": "{H}:{m}",
         "format-icons": [" ", " ", " ", " ", " "],
         "max-length": 25
