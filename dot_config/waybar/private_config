@@ -1,14 +1,19 @@
 {
     "spacing": 0,
-    "modules-left": ["wlr/taskbar"],
+    "modules-left": ["cpu", "memory", "disk"],
     "modules-center": ["clock"],
     "modules-right": ["pulseaudio", "network", "battery", "tray"],
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 21,
-        "icon-theme": "Luv",
-        "tooltip-format": "{title}",
-        "on-click": "activate"
+    "cpu": {
+        "interval": 5,
+        "format": " {usage}%"
+    },
+    "memory": {
+        "interval": 5,
+        "format": " {used:0.2f}GB"
+    },
+    "disk": {
+        "interval": 30,
+        "format": " {free}"
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",

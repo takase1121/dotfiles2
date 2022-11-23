@@ -12,8 +12,19 @@ window#waybar {
     color: @text;
 }
 
-box#taskbar.active {
-    background-color: @surface0;
+#cpu, #cpu label {
+    background-color: @peach;
+    color: @mantle;
+}
+
+#memory, #memory label {
+    background-color: @flamingo;
+    color: @mantle;
+}
+
+#disk, #disk label {
+    background-color: @sapphire;
+    color: @mantle;
 }
 
 #pulseaudio {
