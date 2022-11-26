@@ -1,7 +1,7 @@
 @import "mocha.css";
 
 * {
-    font-family: Symbols Nerd Font,sans-serif;
+    font-family: Symbols Nerd Font, Inter, sans-serif;
     font-size: 11pt;
     border: 0;
     border-radius: 0;
@@ -12,17 +12,21 @@ window#waybar {
     color: @text;
 }
 
-#cpu, #cpu label {
+label {
+    padding: 0.3rem 0.5rem;
+}
+
+#cpu {
     background-color: @peach;
     color: @mantle;
 }
 
-#memory, #memory label {
+#memory {
     background-color: @flamingo;
     color: @mantle;
 }
 
-#disk, #disk label {
+#disk {
     background-color: @sapphire;
     color: @mantle;
 }
@@ -36,7 +40,7 @@ window#waybar {
     background-color: @yellow;
 }
 
-#network label {
+#network {
     color: @mantle;
 }
 
@@ -56,12 +60,16 @@ window#waybar {
     background-color: @sapphire;
 }
 
-#battery label {
+#battery {
     color: @mantle;
 }
 
-#battery.charging, #battery.not-charging {
-    background-color: @flamingo;
+#battery.full {
+    background-color: @sapphire;
+}
+
+#battery.plugged {
+    background-color: @green;
 }
 
 #battery.discharging {
