@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+exec &> /dev/null
+
 . $HOME/.bash_profile
 
-exec wayfire
+exec wayfire 
