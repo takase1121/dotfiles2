@@ -2,6 +2,15 @@
 
 exec &> /dev/null
 
+# Session
+export XDG_SESSION_TYPE=wayland
+export XDG_SESSION_DESKTOP=Wayfire
+export XDG_CURRENT_DESKTOP=Wayfire
+
+export MOZ_ENABLE_WAYLAND=1
+export QT_QPA_PLATFORM=wayland
+export GRIM_DEFAULT_DIR=$HOME/Pictures/Screenshots
+
 . $HOME/.bash_profile
 
-exec wayfire 
+exec wayfire $@
