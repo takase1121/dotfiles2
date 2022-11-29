@@ -13,4 +13,4 @@ export GRIM_DEFAULT_DIR=$HOME/Pictures/Screenshots
 
 . $HOME/.bash_profile
 
-exec wayfire $@
+exec systemd-cat --identifier=wayfire wayfire $@
