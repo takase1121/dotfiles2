@@ -1,0 +1,13 @@
+[Unit]
+Description=Screen locker for Wayland sessions
+OnSuccess=unlock.target
+PartOf=lock.target
+After=lock.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/gtklock -d
+Restart=on-failure
+
+[Install]
+WantedBy=lock.target
