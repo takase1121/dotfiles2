@@ -38,7 +38,3 @@ button:focus, button:active, button:hover {
 #reboot {
     background-image: image(url("/usr/share/icons/Luv/apps/64/system-reboot.svg"), url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
 }
-
-#hibernate {
-    background-image: image(url("/usr/share/icons/Luv/apps/64/system-suspend-hibernate.svg"), url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
-}
