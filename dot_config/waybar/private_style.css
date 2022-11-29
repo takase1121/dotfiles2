@@ -68,7 +68,7 @@ label {
     background-color: @sapphire;
 }
 
-#battery.plugged {
+#battery.plugged, #battery.charging {
     background-color: @green;
 }
 
